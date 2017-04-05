@@ -31,6 +31,7 @@ export class LoginService {
             const error = this.validateCredentials(email, password);
             if (error) {
                 observer.error({ error: true, payload: error });
+                return;
             }
 
             observer.next({ payload: true});

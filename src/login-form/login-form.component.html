@@ -1,23 +1,38 @@
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm" *ngIf="!submitted" novalidate>
-    <fieldset>
+    <fieldset class="login">
         <rd-error-message [error]="errorMessage"></rd-error-message>
-        <div>
-            <label for="email">Email</label>
+        <div class="login__group">
+            <label for="email" class="login__label">Email</label>
             <input 
                 type="email" 
+                class="login__input"
                 name="email" 
                 id="email" 
                 required 
                 [(ngModel)]="loginModel.email"
             >
         </div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required [(ngModel)]="loginModel.password">
+        <div class="login__group">
+            <label for="password" class="login__label">Password</label>
+            <input 
+                type="password" 
+                class="login__input"                
+                name="password" 
+                id="password" 
+                required 
+                [(ngModel)]="loginModel.password">
+        </div>
 
-        <label for="remember">Remember me</label>
-        <input type="checkbox" name="remember" id="remember" [(ngModel)]="loginModel.remember">
+        <div class="login__group">
+            <label for="remember">Remember me</label>
+            <input 
+                type="checkbox" 
+                name="remember" 
+                id="remember" 
+                [(ngModel)]="loginModel.remember">
+        </div>
 
-      	<input type="submit" value="login">
+      	<input class="login__submit login__submit--center" type="submit" value="Login">
 
     </fieldset> 
 </form> 
