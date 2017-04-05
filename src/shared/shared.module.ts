@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import {
     LoginService,
+    LocalStorageService,
+    WindowService,
 
     ErrorMessageComponent,
 } from './';
@@ -21,7 +23,9 @@ import {
     ErrorMessageComponent,
   ],
   providers: [
-    LoginService
+    WindowService,
+    LocalStorageService,
+    LoginService,
   ]
 })
 export class SharedModule { }

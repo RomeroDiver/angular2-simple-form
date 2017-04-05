@@ -1,4 +1,6 @@
 // Services
+export * from './services/window.service';
+export * from './services/local-storage.service';
 export * from './services/login.service';
 
 // Components

@@ -1,5 +1,6 @@
-<form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" *ngIf="!submitted" novalidate>
     <fieldset>
+        <rd-error-message [error]="errorMessage"></rd-error-message>
         <div>
             <label for="email">Email</label>
             <input 
@@ -8,8 +9,7 @@
                 id="email" 
                 required 
                 [(ngModel)]="loginModel.email"
-                #email="ngModel">
-            <rd-error-message [input]="email"></rd-error-message>
+            >
         </div>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required [(ngModel)]="loginModel.password">
@@ -19,6 +19,9 @@
 
       	<input type="submit" value="login">
 
-          <p>Check this out: {{loginModel.email}}</p>
     </fieldset> 
 </form> 
+
+<section *ngIf="submitted">
+    Login successful!
+</section>
