@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
+    <fieldset>
+        <div>
+            <label for="email">Email</label>
+            <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                required 
+                [(ngModel)]="loginModel.email"
+                #email="ngModel">
+            <rd-error-message [input]="email"></rd-error-message>
+        </div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required [(ngModel)]="loginModel.password">
+
+        <label for="remember">Remember me</label>
+        <input type="checkbox" name="remember" id="remember" [(ngModel)]="loginModel.remember">
+
+      	<input type="submit" value="login">
+
+          <p>Check this out: {{loginModel.email}}</p>
+    </fieldset> 
+</form> 
