@@ -2,7 +2,7 @@ import {
     Component,
     Input,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { LOGIN_ERRORS } from '../';
 
 @Component({
   selector: 'rd-error-message',
@@ -11,10 +11,15 @@ import { FormControl } from '@angular/forms';
 })
 export class ErrorMessageComponent {
 
-    @Input() input: FormControl;
+    @Input() error: string;
 
-    private show() {
-        return this.input.invalid && this.input.touched;
+    private translatedErrorMessage = {
+        [LOGIN_ERRORS.INVALID_CREDENTIALS]: 'Invalid email or password',
+        [LOGIN_ERRORS.INVALID_EMAIL]: 'Invalid email',
+        [LOGIN_ERRORS.INVALID_PASSWORD]: 'Invalid password',
+    };
+
+    private log(value) {
+        return JSON.stringify(value);
     }
-
 }

@@ -1,3 +1,3 @@
-<ul *ngIf="show()">
-    <li>Error</li>
-</ul>
+<div *ngIf="error">
+    {{ translatedErrorMessage[error] || error }}
+</div>
