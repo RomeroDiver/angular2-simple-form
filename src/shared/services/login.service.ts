@@ -23,11 +23,15 @@ export const LOGIN_ERRORS = {
 
 @Injectable()
 export class LoginService {
-    constructor(private localStorage: LocalStorageService) { }
+    protected isUserLoggedIn: boolean;
+    constructor(private localStorage: LocalStorageService) {
+        this.isUserLoggedIn = this.localStorage.getItem('remember') === 'true';
+     }
 
     login(credentials: LoginModel): Observable<IResponse> {
         return Observable.create((observer: Observer<IResponse>) => {
             const { email, password, remember } = credentials;
+            this.isUserLoggedIn = false;
             const error = this.validateCredentials(email, password);
             if (error) {
                 observer.error({ error: true, payload: error });
@@ -36,11 +40,12 @@ export class LoginService {
 
             observer.next({ payload: true});
             this.localStorage.setItem('remember', remember);
+            this.isUserLoggedIn = true;
         });
     }
 
     isLoggedIn(): boolean {
-        return this.localStorage.getItem('remember');
+        return this.isUserLoggedIn;
     }
 
     private validateCredentials(email: string, password: string): string {

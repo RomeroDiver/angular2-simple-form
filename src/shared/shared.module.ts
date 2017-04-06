@@ -8,11 +8,13 @@ import {
     WindowService,
 
     ErrorMessageComponent,
+    SuccessMessageComponent,
 } from './';
 
 @NgModule({
   declarations: [
     ErrorMessageComponent,
+    SuccessMessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,7 @@ import {
   exports: [
     FormsModule,
     ErrorMessageComponent,
+    SuccessMessageComponent,
   ],
   providers: [
     WindowService,

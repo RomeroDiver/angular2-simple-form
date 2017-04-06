@@ -10,13 +10,13 @@ export class LocalStorageService {
         const { localStorage } = this.windowService.window;
         if (localStorage) {
             this.localStorage = localStorage;
-            return;
+        } else {
+            this.localStorage = {
+                values: {},
+                setItem: (name: string, value: any) => { this.localStorage.values[name] = value; },
+                getItem: (name: string) => this.localStorage.values[name]
+            };
         }
-        this.localStorage = {
-            values: {},
-            setItem: (name: string, value: any) => { this.localStorage.values[name] = value; },
-            getItem: (name: string) => this.localStorage.values[name]
-        };
     }
 
     public setItem(name: string, value: any): void {
