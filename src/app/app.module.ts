@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginFormModule } from '../login-form/login-form.module';
+import { SharedModule } from './../shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -12,8 +14,10 @@ import { LoginFormModule } from '../login-form/login-form.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
+    SharedModule,
+
 
     LoginFormModule,
   ],

@@ -1,3 +1,8 @@
 <main class="app">
-  <rd-login-form></rd-login-form>
+  <section *ngIf="!isLoggedIn()" [@bounceInLeft]="!isLoggedIn()">
+    <rd-login-form></rd-login-form>
+  </section>
+  <section *ngIf="isLoggedIn()" [@bounceInLeft]="isLoggedIn()">
+    <rd-success-message [message]="'LOGIN_SUCCESS'"></rd-success-message>
+  </section>
 </main>
