@@ -7,7 +7,7 @@ import { LOGIN_ERRORS } from '../';
 @Component({
   selector: 'rd-error-message',
   templateUrl: './error-message.component.html',
-  styleUrls: ['./error-message.component.scss']
+  styleUrls: ['./error-message.component.css']
 })
 export class ErrorMessageComponent {
 
@@ -18,8 +18,4 @@ export class ErrorMessageComponent {
         [LOGIN_ERRORS.INVALID_EMAIL]: 'Invalid email',
         [LOGIN_ERRORS.INVALID_PASSWORD]: 'Invalid password',
     };
-
-    private log(value) {
-        return JSON.stringify(value);
-    }
 }
