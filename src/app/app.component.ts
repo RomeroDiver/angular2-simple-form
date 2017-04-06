@@ -22,13 +22,13 @@ import {
               style({ opacity: 1, transform: 'translate3d(25px, 0, 0)',  offset: 0.6 }),
               style({ transform: 'translate3d(-10px, 0, 0)', offset: 0.75 }),
               style({ transform: 'translate3d(5px, 0, 0)', offset: 0.9 }),
-              style({ transform: 'none', offset: 1.0 }),                   
+              style({ transform: 'none', offset: 1.0 }),
             ]))
         ]),
         transition(':leave', [
             animate(300, keyframes([
               style({ opacity: 1, transform: 'translate3d(20px, 0, 0)', offset: 0.2 }),
-              style({ opacity: 0, transform: 'translate3d(-2000px, 0, 0)', offset: 1.0 }),                   
+              style({ opacity: 0, transform: 'translate3d(-2000px, 0, 0)', offset: 1.0 }),
             ]))
         ]),
     ])
