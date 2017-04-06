@@ -1,7 +1,6 @@
 import {
   Component,
   OnDestroy,
-  OnInit,
 } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -13,9 +12,9 @@ import {
 @Component({
   selector: 'rd-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  styleUrls: ['./login-form.component.css'],
 })
-export class LoginFormComponent implements OnDestroy, OnInit {
+export class LoginFormComponent implements OnDestroy {
 
   private loginModel: LoginModel = new LoginModel();
   private loginSubscription: Subscription;
@@ -23,10 +22,6 @@ export class LoginFormComponent implements OnDestroy, OnInit {
   private errorMessage: string;
 
   constructor(private loginService: LoginService) { }
-
-  ngOnInit(): void {
-    this.submitted = this.loginService.isLoggedIn();
-  }
 
   ngOnDestroy(): void {
     this.loginSubscription.unsubscribe();

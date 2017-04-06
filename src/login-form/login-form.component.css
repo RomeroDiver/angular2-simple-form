@@ -9,6 +9,7 @@
 .login__group {
     position: relative;
     margin-bottom: 1rem;
+    margin-top: 0.8rem;
 }
 
 .login__label {
@@ -59,4 +60,8 @@
 
 .login__submit:focus, .login__submit:hover {
     background-color: #ab154c;
+}
+
+.login__checkbox > label {
+    color: #757e82;
 }

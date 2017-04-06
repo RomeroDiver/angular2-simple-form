@@ -1,42 +1,40 @@
-<form (ngSubmit)="onSubmit()" #loginForm="ngForm" *ngIf="!submitted" novalidate>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
     <fieldset class="login">
+      <div class="p-b-md">
         <rd-error-message [error]="errorMessage"></rd-error-message>
+      </div>
         <div class="login__group">
             <label for="email" class="login__label">Email</label>
-            <input 
-                type="email" 
+            <input
+                type="email"
                 class="login__input"
-                name="email" 
-                id="email" 
-                required 
+                name="email"
+                id="email"
+                required
                 [(ngModel)]="loginModel.email"
             >
         </div>
         <div class="login__group">
             <label for="password" class="login__label">Password</label>
-            <input 
-                type="password" 
-                class="login__input"                
-                name="password" 
-                id="password" 
-                required 
+            <input
+                type="password"
+                class="login__input"
+                name="password"
+                id="password"
+                required
                 [(ngModel)]="loginModel.password">
         </div>
 
-        <div class="login__group">
-            <label for="remember">Remember me</label>
-            <input 
-                type="checkbox" 
-                name="remember" 
-                id="remember" 
+        <div class="login__group login__checkbox">
+            <input
+                type="checkbox"
+                name="remember"
+                id="remember"
                 [(ngModel)]="loginModel.remember">
+            <label for="remember">Remember me</label>
         </div>
 
       	<input class="login__submit login__submit--center" type="submit" value="Login">
 
-    </fieldset> 
-</form> 
-
-<section *ngIf="submitted">
-    Login successful!
-</section>
+    </fieldset>
+</form>
